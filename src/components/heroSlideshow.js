@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo, useLayoutEffect, useRef } fr
 import Image from "next/image";
 import styles from "./heroSlideshow.module.css";
 
-const AUTO_PLAY_MS = 7000;
+const AUTO_PLAY_MS = 4000;
 const TRANSITION_MS = 1200;
 const MANUAL_NAV_COOLDOWN_MS = 1500;
 
