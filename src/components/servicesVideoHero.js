@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import styles from "./servicesVideoHero.module.css";
 
-const DEMO_VIDEO_SRC = "/video/demo.MOV";
+const DEMO_VIDEO_SRC = "/video/demo.mp4";
 
 function VolumeOnIcon() {
   return (
