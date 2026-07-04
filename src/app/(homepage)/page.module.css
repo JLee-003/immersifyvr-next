@@ -123,14 +123,16 @@
 
 .homeSectionOverHero {
   margin-top: -3rem;
-  padding-top: calc(3.5rem);
+  padding-top: calc(4.5rem);
+  padding-bottom: 4.5rem;
   z-index: 4;
 }
 
 @media (max-width: 768px) {
   .homeSectionOverHero {
     margin-top: -2.25rem;
-    padding-top: calc(2.25rem + 1.5rem);
+    padding-top: calc(2.75rem + 1.5rem);
+    padding-bottom: 3rem;
   }
 }
 
@@ -165,7 +167,7 @@
 
 .homeQuote {
   width: 100%;
-  padding: 0.75rem 0;
+  padding: 1.25rem 0 0.5rem;
   display: flex;
   justify-content: center;
 }
@@ -174,7 +176,7 @@
   margin: 0;
   text-align: center;
   color: var(--text-color);
-  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.6rem);
+  font-size: clamp(1.75rem, 2.4vw + 1rem, 2.85rem);
   line-height: 1.25;
   font-weight: 600;
   max-width: 980px;
@@ -189,60 +191,58 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem 2.5rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  gap: 2rem 3.5rem;
+  margin-top: 2.75rem;
+  padding-top: 2.25rem;
+  padding-bottom: 0.5rem;
   border-top: 1px solid var(--border-subtle);
 }
 
 .statItem {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 0.25rem;
-  min-width: min(100%, 10rem);
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  min-width: min(100%, 14rem);
 }
 
 .statDivider {
   width: 1px;
-  height: 2.75rem;
+  height: 5.5rem;
   background: var(--border-subtle);
   flex: none;
 }
 
 .statNumber {
-  font-size: clamp(2rem, 2.5vw + 1rem, 2.75rem);
+  font-size: clamp(4rem, 7vw + 1.5rem, 6.75rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
   color: var(--blue-color);
 }
 
 .statLabel {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--text-muted);
   line-height: 1.35;
-  max-width: 14rem;
+  max-width: 16rem;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
   .statsStrip {
     flex-direction: column;
     align-items: stretch;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
+    gap: 1.75rem;
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    padding-bottom: 0.25rem;
   }
 
   .statDivider {
     width: 100%;
     height: 1px;
-  }
-
-  .statItem {
-    align-items: center;
-    text-align: center;
   }
 }
 
