@@ -150,7 +150,7 @@ export default function Home() {
         </SquishToMiddle>
       </section>
 
-      <section className={styles.homeSection}>
+      <section className={`${styles.homeSection} ${styles.homeSectionExtraBottom}`}>
         <SquishToMiddle>
         <ContentBlock
           titleText="Our Core Pillars"
@@ -321,7 +321,7 @@ export default function Home() {
 
       <section
         ref={testimonialsRef}
-        className={`${styles.homeSection} ${styles.homeSectionTestimonials} ${testimonialsVisible ? styles.testimonialsVisible : ""}`}
+        className={`${styles.homeSection} ${styles.homeSectionTestimonials} ${styles.homeSectionExtraBottom} ${testimonialsVisible ? styles.testimonialsVisible : ""}`}
       >
         <SquishToMiddle>
           <div className={styles.testimonialsReveal}>
@@ -332,7 +332,7 @@ export default function Home() {
         </SquishToMiddle>
       </section>
 
-      <section className={styles.homeSection}>
+      <section className={`${styles.homeSection} ${styles.homeSectionExtraBottom}`}>
         <SquishToMiddle>
           <ContentBlock titleText="Awards & Recognition">
             <AwardsSection />

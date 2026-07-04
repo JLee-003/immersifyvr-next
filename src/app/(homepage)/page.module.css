@@ -138,6 +138,11 @@
   background-color: #eef4ff;
 }
 
+/* Match Our Experiences bottom breathing room (gallery + h2 + p margin-bottom) */
+.homeSectionExtraBottom {
+  padding-bottom: 4.5rem;
+}
+
 .homeSectionTestimonials {
   background-color: var(--band-alt);
 }
@@ -292,6 +297,10 @@
   .homeSection {
     margin: 0;
     padding: 2.25rem 0;
+  }
+
+  .homeSectionExtraBottom {
+    padding-bottom: 3.75rem;
   }
 }
 

@@ -66,7 +66,7 @@ export default function Services() {
         </ContentBlock>
         </SquishToMiddle>
       </SectionBand>
-      <SectionBand tightBottom>
+      <SectionBand extraBottom>
         <SquishToMiddle>
         <ContentBlock titleText="The Process">
           <div className={styles.servicesGrid}>

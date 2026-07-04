@@ -5,10 +5,11 @@ export default function SectionBand({
   children,
   tightTop = false,
   tightBottom = false,
+  extraBottom = false,
 }) {
   return (
     <section
-      className={`${styles.band} ${alt ? styles.alt : ""} ${tightTop ? styles.bandTightTop : ""} ${tightBottom ? styles.bandTightBottom : ""}`}
+      className={`${styles.band} ${alt ? styles.alt : ""} ${tightTop ? styles.bandTightTop : ""} ${tightBottom ? styles.bandTightBottom : ""} ${extraBottom ? styles.bandExtraBottom : ""}`}
     >
       {children}
     </section>

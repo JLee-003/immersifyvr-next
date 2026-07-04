@@ -18,6 +18,11 @@
   padding-bottom: 1rem;
 }
 
+/* Match Our Experiences bottom breathing room (gallery + h2 + p margin-bottom) */
+.band.bandExtraBottom {
+  padding-bottom: 4.5rem;
+}
+
 @media (max-width: 768px) {
   .band {
     padding: 2.25rem 0;
@@ -29,6 +34,10 @@
 
   .band.bandTightBottom {
     padding-bottom: 0.75rem;
+  }
+
+  .band.bandExtraBottom {
+    padding-bottom: 3.75rem;
   }
 }
 

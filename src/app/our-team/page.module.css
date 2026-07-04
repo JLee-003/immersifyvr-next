@@ -10,7 +10,7 @@
   align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 var(--space-page-gutter);
+  padding: 0;
 }
 
 .contactHeroImage {
@@ -58,7 +58,6 @@
   .contactLayout {
     grid-template-columns: 1fr;
     gap: var(--space-grid);
-    padding: 0 1rem;
   }
 
   .contactHeading {
