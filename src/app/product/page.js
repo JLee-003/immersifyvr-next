@@ -9,7 +9,7 @@ export default function ProductRedirect() {
 		router.replace("/services");
 	}, [router]);
 	return (
-		<p style={{ padding: "2rem", textAlign: "center" }}>
+		<p style={{ padding: "2rem" }}>
 			Redirecting to Services…
 		</p>
 	);

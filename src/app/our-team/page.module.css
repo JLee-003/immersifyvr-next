@@ -42,6 +42,7 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-color);
+  text-align: left;
 }
 
 .ourTeamIntro {
@@ -51,7 +52,7 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-color);
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -66,7 +67,7 @@
   }
 
   .contactLead {
-    text-align: center;
+    text-align: left;
   }
 
   .ourTeamIntro {

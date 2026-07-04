@@ -238,6 +238,7 @@
   line-height: 1.6;
   color: var(--text-color);
   margin: 0;
+  text-align: left;
 }
 
 .wipNote {
@@ -350,8 +351,8 @@
 
 .testimonialRowReverse .testimonialBody {
   order: 1;
-  align-items: flex-end;
-  text-align: right;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .testimonialMedia {
@@ -366,7 +367,7 @@
 .testimonialRowReverse .testimonialName,
 .testimonialRowReverse .testimonialRole,
 .testimonialRowReverse .testimonialText {
-  text-align: right;
+  text-align: left;
 }
 
 .testimonialMedia img {
@@ -411,7 +412,6 @@
   line-height: 1.6;
   margin-top: 0.85rem;
   color: var(--text-color);
-  text-align: center;
 }
 
 .testimonialImage {
@@ -497,14 +497,14 @@
   }
 
   .testimonialBody {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .testimonialName,
   .testimonialRole,
   .testimonialText {
-    text-align: center;
+    text-align: left;
   }
 
   .testimonialText {
@@ -594,6 +594,7 @@
   margin: 0 0 auto 0;
   line-height: 1.6;
   color: var(--text-color);
+  text-align: left;
 }
 
 @media (max-width: 768px) {
