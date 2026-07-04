@@ -10,12 +10,17 @@
 }
 
 .whatWeOfferContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: var(--space-grid-tight);
+}
+
+.offerRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--space-grid);
-  row-gap: 2.5rem;
   align-items: center;
-  margin-top: var(--space-grid-tight);
 }
 
 .offerImage img {
@@ -49,6 +54,10 @@
 
 @media (max-width: 768px) {
   .whatWeOfferContainer {
+    gap: 1rem;
+  }
+
+  .offerRow {
     grid-template-columns: 1fr;
     row-gap: 1rem;
   }

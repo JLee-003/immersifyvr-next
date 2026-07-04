@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./awardsSection.module.css";
 
@@ -49,12 +52,20 @@ function AwardLogo({ logo, logoAlt, featured = false }) {
   );
 }
 
-function AwardCard({ award, featured = false, compact = false }) {
+function AwardCard({
+  award,
+  featured = false,
+  compact = false,
+  visible = false,
+  awardIndex,
+}) {
   const cardClass = [
     styles.awardCard,
+    styles.awardRevealCard,
     featured ? styles.awardCardFeatured : "",
     compact ? styles.awardCardCompact : "",
     award.certificate ? styles.awardCardLink : "",
+    visible ? styles.awardVisible : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -73,6 +84,7 @@ function AwardCard({ award, featured = false, compact = false }) {
         target="_blank"
         rel="noopener noreferrer"
         className={cardClass}
+        data-award-index={awardIndex}
         aria-label={`${award.name} — view certificate`}
       >
         {content}
@@ -80,18 +92,64 @@ function AwardCard({ award, featured = false, compact = false }) {
     );
   }
 
-  return <article className={cardClass}>{content}</article>;
+  return (
+    <article className={cardClass} data-award-index={awardIndex}>
+      {content}
+    </article>
+  );
 }
 
 export default function AwardsSection() {
+  const sectionRef = useRef(null);
+  const [visibleAwards, setVisibleAwards] = useState(() => new Set());
   const [featured, ...secondary] = AWARDS;
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const cards = section.querySelectorAll("[data-award-index]");
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const index = Number(entry.target.dataset.awardIndex);
+          setVisibleAwards((prev) => {
+            if (prev.has(index)) return prev;
+            const next = new Set(prev);
+            next.add(index);
+            return next;
+          });
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={styles.awardsLayout}>
-      <AwardCard award={featured} featured />
+    <div ref={sectionRef} className={styles.awardsLayout}>
+      <AwardCard
+        award={featured}
+        featured
+        visible={visibleAwards.has(0)}
+        awardIndex={0}
+      />
       <div className={styles.awardsSecondary}>
-        {secondary.map((award) => (
-          <AwardCard key={award.name} award={award} compact />
+        {secondary.map((award, index) => (
+          <AwardCard
+            key={award.name}
+            award={award}
+            compact
+            visible={visibleAwards.has(index + 1)}
+            awardIndex={index + 1}
+          />
         ))}
       </div>
     </div>

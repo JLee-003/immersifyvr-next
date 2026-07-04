@@ -1,0 +1,51 @@
+@keyframes revealMediaIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes revealBodyIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.65rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.revealCard .revealMedia,
+.revealCard .revealTitle,
+.revealCard .revealBody {
+  opacity: 0;
+}
+
+.revealVisible .revealMedia {
+  animation: revealMediaIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.revealVisible .revealTitle {
+  animation: revealBodyIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.14s;
+}
+
+.revealVisible .revealBody {
+  animation: revealBodyIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.26s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revealCard .revealMedia,
+  .revealCard .revealTitle,
+  .revealCard .revealBody {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}

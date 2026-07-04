@@ -14,6 +14,7 @@ import ImageGallery from "@/components/imageGallery";
 import TestimonialsCarousel from "@/components/testimonialsCarousel";
 import AwardsSection from "@/components/awardsSection";
 import HeroSlideshow from "@/components/heroSlideshow";
+import RainingDotsBackground from "@/components/rainingDotsBackground";
 
 const HERO_SLIDESHOW_IMAGES = [
   "/img/chateau-1.avif",
@@ -30,8 +31,10 @@ const HERO_SLIDESHOW_IMAGES = [
 
 export default function Home() {
   const experienceRefs = useRef([]);
+  const pillarsSectionRef = useRef(null);
   const testimonialsRef = useRef(null);
   const [visibleExperiences, setVisibleExperiences] = useState(() => new Set());
+  const [visiblePillars, setVisiblePillars] = useState(() => new Set());
   const [testimonialsVisible, setTestimonialsVisible] = useState(false);
 
   useEffect(() => {
@@ -45,6 +48,35 @@ export default function Home() {
 
           const index = Number(entry.target.dataset.experienceIndex);
           setVisibleExperiences((prev) => {
+            if (prev.has(index)) return prev;
+            const next = new Set(prev);
+            next.add(index);
+            return next;
+          });
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const section = pillarsSectionRef.current;
+    if (!section) return;
+
+    const cards = section.querySelectorAll("[data-pillar-index]");
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const index = Number(entry.target.dataset.pillarIndex);
+          setVisiblePillars((prev) => {
             if (prev.has(index)) return prev;
             const next = new Set(prev);
             next.add(index);
@@ -100,32 +132,35 @@ export default function Home() {
       </div>
 
       <section className={`${styles.homeSection} ${styles.homeSectionOverHero}`}>
-        <SquishToMiddle>
-          <div className={styles.homeQuote}>
-            <h2 className={styles.homeQuoteText}>
-              ImmersifyVR is a{" "}
-              <span className={styles.accent}>virtual reality</span> exercise
-              simulator designed to make{" "}
-              <span className={styles.accent}>exercising fun</span>.
-            </h2>
-          </div>
-          <div className={styles.statsStrip}>
-            <div className={styles.statItem}>
-              <div className={styles.statNumber}>650+</div>
-              <div className={styles.statLabel}>Hours dedicated</div>
+        <RainingDotsBackground />
+        <div className={styles.homeSectionContent}>
+          <SquishToMiddle>
+            <div className={styles.homeQuote}>
+              <h2 className={styles.homeQuoteText}>
+                ImmersifyVR is a{" "}
+                <span className={styles.accent}>virtual reality</span> exercise
+                simulator designed to make{" "}
+                <span className={styles.accent}>exercising fun</span>.
+              </h2>
             </div>
-            <div className={styles.statDivider} aria-hidden="true" />
-            <div className={styles.statItem}>
-              <div className={styles.statNumber}>3</div>
-              <div className={styles.statLabel}>Locations visited</div>
+            <div className={styles.statsStrip}>
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>650+</div>
+                <div className={styles.statLabel}>Hours dedicated</div>
+              </div>
+              <div className={styles.statDivider} aria-hidden="true" />
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>3</div>
+                <div className={styles.statLabel}>Locations visited</div>
+              </div>
+              <div className={styles.statDivider} aria-hidden="true" />
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>7</div>
+                <div className={styles.statLabel}>Total visits</div>
+              </div>
             </div>
-            <div className={styles.statDivider} aria-hidden="true" />
-            <div className={styles.statItem}>
-              <div className={styles.statNumber}>7</div>
-              <div className={styles.statLabel}>Total visits</div>
-            </div>
-          </div>
-        </SquishToMiddle>
+          </SquishToMiddle>
+        </div>
       </section>
 
       <section className={`${styles.homeSection} ${styles.homeSectionAlt}`}>
@@ -210,14 +245,21 @@ export default function Home() {
         </SquishToMiddle>
       </section>
 
-      <section className={`${styles.homeSection} ${styles.homeSectionExtraBottom}`}>
+      <section
+        ref={pillarsSectionRef}
+        className={`${styles.homeSection} ${styles.homeSectionExtraBottom}`}
+      >
         <SquishToMiddle>
         <ContentBlock
           titleText="Our Core Pillars"
           headerSpacerSize="medium"
         >
           <PillarsGrid className={styles.pillarsGrid}>
-            <div className={styles.featureCard} data-pillar-card>
+            <div
+              className={`${styles.featureCard} ${styles.pillarCard} ${visiblePillars.has(0) ? styles.pillarVisible : ""}`}
+              data-pillar-card
+              data-pillar-index={0}
+            >
               <div className={styles.featureCardImage}>
                 <Image
                   src="/img/swimming-1.avif"
@@ -255,7 +297,11 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className={styles.featureCard} data-pillar-card>
+            <div
+              className={`${styles.featureCard} ${styles.pillarCard} ${visiblePillars.has(1) ? styles.pillarVisible : ""}`}
+              data-pillar-card
+              data-pillar-index={1}
+            >
               <div className={styles.featureCardImage}>
                 <Image
                   src="/img/chateau-2.avif"
@@ -297,7 +343,11 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className={styles.featureCard} data-pillar-card>
+            <div
+              className={`${styles.featureCard} ${styles.pillarCard} ${visiblePillars.has(2) ? styles.pillarVisible : ""}`}
+              data-pillar-card
+              data-pillar-index={2}
+            >
               <div className={styles.featureCardImage}>
                 <Image
                   src="/img/chateau-10.avif"
@@ -337,7 +387,11 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className={styles.featureCard} data-pillar-card>
+            <div
+              className={`${styles.featureCard} ${styles.pillarCard} ${visiblePillars.has(3) ? styles.pillarVisible : ""}`}
+              data-pillar-card
+              data-pillar-index={3}
+            >
               <div className={styles.featureCardImage}>
                 <Image
                   src="/img/chateau-11.avif"

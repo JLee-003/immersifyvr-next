@@ -126,6 +126,12 @@
   padding-top: calc(4.5rem);
   padding-bottom: 4.5rem;
   z-index: 4;
+  overflow: hidden;
+}
+
+.homeSectionContent {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -661,6 +667,39 @@
   .pillarsGrid {
     grid-template-columns: 1fr;
     gap: var(--space-grid-tight);
+  }
+}
+
+.pillarCard .featureCardImage,
+.pillarCard .featureIcon,
+.pillarCard .featureTitle,
+.pillarCard .featureDescription {
+  opacity: 0;
+}
+
+.pillarVisible .featureCardImage {
+  animation: experienceMediaIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.pillarVisible .featureIcon,
+.pillarVisible .featureTitle {
+  animation: experienceBodyIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.14s;
+}
+
+.pillarVisible .featureDescription {
+  animation: experienceBodyIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.26s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillarCard .featureCardImage,
+  .pillarCard .featureIcon,
+  .pillarCard .featureTitle,
+  .pillarCard .featureDescription {
+    opacity: 1;
+    animation: none;
+    transform: none;
   }
 }
 

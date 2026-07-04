@@ -1,11 +1,14 @@
 "use client";
 
 import styles from "./profileGallery.module.css";
+import reveal from "@/styles/revealAnimation.module.css";
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ProfileGallery({ profiles }) {
+export default function ProfileGallery({ profiles, revealOnScroll = false }) {
   const [openCards, setOpenCards] = useState({});
+  const { sectionRef, isVisible } = useRevealOnScroll();
 
   const toggleCard = (index) => {
     setOpenCards((previous) => ({
@@ -15,10 +18,19 @@ export default function ProfileGallery({ profiles }) {
   };
 
   return (
-    <div className={styles.gallery}>
+    <div
+      ref={revealOnScroll ? sectionRef : undefined}
+      className={styles.gallery}
+    >
       {profiles.map((profile, index) => (
-        <div key={index} className={styles.profileCard}>
-          <div className={styles.profileImageWrap}>
+        <div
+          key={index}
+          className={`${styles.profileCard} ${revealOnScroll ? reveal.revealCard : ""} ${revealOnScroll && isVisible(index) ? reveal.revealVisible : ""}`}
+          data-reveal-index={revealOnScroll ? index : undefined}
+        >
+          <div
+            className={`${styles.profileImageWrap} ${revealOnScroll ? reveal.revealMedia : ""}`}
+          >
             <Image
               src={profile.src}
               alt={profile.alt}
@@ -31,7 +43,7 @@ export default function ProfileGallery({ profiles }) {
           <div
             className={`${styles.profileInfoPanel} ${
               openCards[index] ? styles.profileInfoPanelOpen : ""
-            }`}
+            } ${revealOnScroll ? reveal.revealTitle : ""}`}
           >
             {profile.introduction ? (
               <button

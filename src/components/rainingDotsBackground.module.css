@@ -1,0 +1,37 @@
+.canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dot {
+  position: absolute;
+  top: -8%;
+  border-radius: 50%;
+  background: var(--blue-color);
+  animation-name: rainFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes rainFall {
+  from {
+    transform: translate(-3.5rem, -12vh);
+  }
+  to {
+    transform: translate(3.5rem, 112vh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+    opacity: 0.28 !important;
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+}
