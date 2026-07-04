@@ -1,20 +1,42 @@
-.awardsGrid {
+.awardsLayout {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1.4fr 1fr;
   gap: var(--space-grid);
   margin-top: 0.5rem;
+  align-items: stretch;
+}
+
+.awardsSecondary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-grid-tight);
 }
 
 .awardCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.25rem;
-  padding: 2rem 1.5rem;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem;
+  padding: 1.75rem 1.5rem;
   background-color: var(--band-alt);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.awardCardFeatured {
+  padding: 2.25rem 2rem;
+  justify-content: center;
+}
+
+.awardCardCompact {
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.35rem;
 }
 
 .awardCardLink {
@@ -38,9 +60,19 @@
 .awardLogo,
 .awardLogoPlaceholder {
   position: relative;
-  width: min(200px, 100%);
+  width: min(160px, 100%);
   aspect-ratio: 4 / 3;
   flex: none;
+}
+
+.awardLogoFeatured {
+  width: min(280px, 100%);
+}
+
+.awardCardCompact .awardLogo,
+.awardCardCompact .awardLogoPlaceholder {
+  width: 100px;
+  aspect-ratio: 1 / 1;
 }
 
 .awardLogo {
@@ -76,16 +108,37 @@
   font-weight: 600;
   line-height: 1.4;
   color: var(--text-color);
-  max-width: 18rem;
+  max-width: 22rem;
+}
+
+.awardCardFeatured .awardName {
+  font-size: 1.2rem;
+  max-width: 24rem;
+}
+
+.awardCardCompact .awardName {
+  font-size: 0.98rem;
+  max-width: none;
 }
 
 @media (max-width: 900px) {
-  .awardsGrid {
+  .awardsLayout {
     grid-template-columns: 1fr;
     gap: var(--space-grid-tight);
   }
 
-  .awardCard {
+  .awardCardFeatured {
     padding: 1.75rem 1.25rem;
+  }
+
+  .awardCardCompact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .awardCardCompact .awardLogo,
+  .awardCardCompact .awardLogoPlaceholder {
+    width: min(140px, 100%);
+    aspect-ratio: 4 / 3;
   }
 }

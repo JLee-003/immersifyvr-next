@@ -3,7 +3,12 @@
 import { useState } from 'react';
 import styles from './imageGallery.module.css';
 
-export default function ImageGallery({ images, altText }) {
+export default function ImageGallery({
+  images,
+  altText,
+  className = "",
+  aspectRatio = false,
+}) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -19,7 +24,9 @@ export default function ImageGallery({ images, altText }) {
   };
 
   return (
-    <div className={styles.gallery}>
+    <div
+      className={`${styles.gallery} ${aspectRatio ? styles.galleryAspectRatio : ""} ${className}`.trim()}
+    >
       <button 
         className={styles.arrow} 
         onClick={goToPrevious}

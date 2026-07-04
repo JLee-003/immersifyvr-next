@@ -21,15 +21,21 @@ const AWARDS = [
   },
 ];
 
-function AwardLogo({ logo, logoAlt }) {
+function AwardLogo({ logo, logoAlt, featured = false }) {
   if (logo) {
     return (
-      <div className={styles.awardLogo}>
+      <div
+        className={`${styles.awardLogo} ${featured ? styles.awardLogoFeatured : ""}`}
+      >
         <Image
           src={logo}
           alt={logoAlt}
           fill
-          sizes="(max-width: 768px) 160px, 200px"
+          sizes={
+            featured
+              ? "(max-width: 768px) 200px, 280px"
+              : "(max-width: 768px) 120px, 160px"
+          }
           className={styles.awardLogoImg}
         />
       </div>
@@ -43,10 +49,19 @@ function AwardLogo({ logo, logoAlt }) {
   );
 }
 
-function AwardCard({ award }) {
+function AwardCard({ award, featured = false, compact = false }) {
+  const cardClass = [
+    styles.awardCard,
+    featured ? styles.awardCardFeatured : "",
+    compact ? styles.awardCardCompact : "",
+    award.certificate ? styles.awardCardLink : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   const content = (
     <>
-      <AwardLogo logo={award.logo} logoAlt={award.logoAlt} />
+      <AwardLogo logo={award.logo} logoAlt={award.logoAlt} featured={featured} />
       <h3 className={styles.awardName}>{award.name}</h3>
     </>
   );
@@ -57,7 +72,7 @@ function AwardCard({ award }) {
         href={award.certificate}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${styles.awardCard} ${styles.awardCardLink}`}
+        className={cardClass}
         aria-label={`${award.name} — view certificate`}
       >
         {content}
@@ -65,15 +80,20 @@ function AwardCard({ award }) {
     );
   }
 
-  return <article className={styles.awardCard}>{content}</article>;
+  return <article className={cardClass}>{content}</article>;
 }
 
 export default function AwardsSection() {
+  const [featured, ...secondary] = AWARDS;
+
   return (
-    <div className={styles.awardsGrid}>
-      {AWARDS.map((award) => (
-        <AwardCard key={award.name} award={award} />
-      ))}
+    <div className={styles.awardsLayout}>
+      <AwardCard award={featured} featured />
+      <div className={styles.awardsSecondary}>
+        {secondary.map((award) => (
+          <AwardCard key={award.name} award={award} compact />
+        ))}
+      </div>
     </div>
   );
 }

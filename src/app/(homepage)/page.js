@@ -8,7 +8,6 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import QuoteButton from "@/components/quoteButton";
 import ContentBlock from "@/components/contentBlock";
-import SideBySide from "@/components/sideBySide";
 import PillarsGrid from "@/components/pillarsGrid";
 import SquishToMiddle from "@/components/squishToMiddle";
 import ImageGallery from "@/components/imageGallery";
@@ -32,8 +31,36 @@ const HERO_SLIDESHOW_IMAGES = [
 ];
 
 export default function Home() {
+  const experienceRefs = useRef([]);
   const testimonialsRef = useRef(null);
+  const [visibleExperiences, setVisibleExperiences] = useState(() => new Set());
   const [testimonialsVisible, setTestimonialsVisible] = useState(false);
+
+  useEffect(() => {
+    const cards = experienceRefs.current.filter(Boolean);
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const index = Number(entry.target.dataset.experienceIndex);
+          setVisibleExperiences((prev) => {
+            if (prev.has(index)) return prev;
+            const next = new Set(prev);
+            next.add(index);
+            return next;
+          });
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const section = testimonialsRef.current;
@@ -84,15 +111,17 @@ export default function Home() {
               <span className={styles.accent}>exercising fun</span>.
             </h2>
           </div>
-          <div className={styles.statsGrid}>
+          <div className={styles.statsStrip}>
             <div className={styles.statItem}>
               <div className={styles.statNumber}>—</div>
               <div className={styles.statLabel}>Stat label</div>
             </div>
+            <div className={styles.statDivider} aria-hidden="true" />
             <div className={styles.statItem}>
               <div className={styles.statNumber}>—</div>
               <div className={styles.statLabel}>Stat label</div>
             </div>
+            <div className={styles.statDivider} aria-hidden="true" />
             <div className={styles.statItem}>
               <div className={styles.statNumber}>—</div>
               <div className={styles.statLabel}>Stat label</div>
@@ -104,48 +133,81 @@ export default function Home() {
       <section className={`${styles.homeSection} ${styles.homeSectionAlt}`}>
         <SquishToMiddle>
           <ContentBlock titleText="Our Experiences">
-            <SideBySide>
-              <div className={styles.exampleExperienceColumn}>
-                <ImageGallery
-                  images={[
-                    "/img/beach-view.png",
-                    "/img/swimming-1.avif",
-                    "/img/swimming-2.avif",
-                    "/img/swimming-3.avif",
-                  ]}
-                  altText="Virtual Swimming Experience"
-                />
-                <h2>Virtual Swimming</h2>
-                <p>
-                  Swim around in a virtual ocean environment and catch as many
-                  fish as you can! Users can expect a low-moderate intensity
-                  upper body workout.
-                </p>
-              </div>
-              <div className={styles.exampleExperienceColumn}>
-                <ImageGallery
-                  images={["/img/spaceball-1.avif", "/img/spaceball-2.avif"]}
-                  altText="Spaceball Experience"
-                />
-                <h2>Spaceball</h2>
-                <p>
-                  Play a tennis-like game in a virtual space environment! Users
-                  can expect a moderate intensity upper body workout.
-                </p>
-              </div>
-              <div className={styles.exampleExperienceColumn}>
-                <ImageGallery
-                  images={["/img/rock-climbing.png"]}
-                  altText="Rock Climbing Experience"
-                />
-                <h2>Rock Climbing</h2>
-                <p>
-                  Explore a new and exciting world, one rock at a time. A low
-                  intensity workout that allows users to climb at their own
-                  pace.
-                </p>
-              </div>
-            </SideBySide>
+            <div className={styles.experiencesList}>
+              <article
+                ref={(el) => {
+                  experienceRefs.current[0] = el;
+                }}
+                data-experience-index={0}
+                className={`${styles.experienceCard} ${visibleExperiences.has(0) ? styles.experienceVisible : ""}`}
+              >
+                <div className={styles.experienceMedia}>
+                  <ImageGallery
+                    aspectRatio
+                    images={[
+                      "/img/beach-view.png",
+                      "/img/swimming-1.avif",
+                      "/img/swimming-2.avif",
+                      "/img/swimming-3.avif",
+                    ]}
+                    altText="Virtual Swimming Experience"
+                  />
+                </div>
+                <div className={styles.experienceBody}>
+                  <h2>Virtual Swimming</h2>
+                  <p>
+                    Swim around in a virtual ocean environment and catch as many
+                    fish as you can! Users can expect a low-moderate intensity
+                    upper body workout.
+                  </p>
+                </div>
+              </article>
+              <article
+                ref={(el) => {
+                  experienceRefs.current[1] = el;
+                }}
+                data-experience-index={1}
+                className={`${styles.experienceCard} ${visibleExperiences.has(1) ? styles.experienceVisible : ""}`}
+              >
+                <div className={styles.experienceMedia}>
+                  <ImageGallery
+                    aspectRatio
+                    images={["/img/spaceball-1.avif", "/img/spaceball-2.avif"]}
+                    altText="Spaceball Experience"
+                  />
+                </div>
+                <div className={styles.experienceBody}>
+                  <h2>Spaceball</h2>
+                  <p>
+                    Play a tennis-like game in a virtual space environment! Users
+                    can expect a moderate intensity upper body workout.
+                  </p>
+                </div>
+              </article>
+              <article
+                ref={(el) => {
+                  experienceRefs.current[2] = el;
+                }}
+                data-experience-index={2}
+                className={`${styles.experienceCard} ${visibleExperiences.has(2) ? styles.experienceVisible : ""}`}
+              >
+                <div className={styles.experienceMedia}>
+                  <ImageGallery
+                    aspectRatio
+                    images={["/img/rock-climbing.png"]}
+                    altText="Rock Climbing Experience"
+                  />
+                </div>
+                <div className={styles.experienceBody}>
+                  <h2>Rock Climbing</h2>
+                  <p>
+                    Explore a new and exciting world, one rock at a time. A low
+                    intensity workout that allows users to climb at their own
+                    pace.
+                  </p>
+                </div>
+              </article>
+            </div>
           </ContentBlock>
         </SquishToMiddle>
       </section>
