@@ -18,8 +18,6 @@ import HeroSlideshow from "@/components/heroSlideshow";
 const HERO_SLIDESHOW_IMAGES = [
   "/img/chateau-1.avif",
   "/img/chateau-2.avif",
-  "/img/chateau-3.avif",
-  "/img/chateau-4.avif",
   "/img/chateau-5.avif",
   "/img/chateau-6.avif",
   "/img/chateau-7.avif",
@@ -27,7 +25,7 @@ const HERO_SLIDESHOW_IMAGES = [
   { src: "/img/chateau-9.avif", objectPosition: "center 38%" },
   "/img/chateau-10.avif",
   { src: "/img/chateau-11.avif", objectPosition: "center 28%" },
-  { src: "/img/presentation.avif", objectPosition: "center 22%" },
+  "/img/ed2.avif",
 ];
 
 export default function Home() {
