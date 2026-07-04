@@ -13,6 +13,7 @@ import PillarsGrid from "@/components/pillarsGrid";
 import SquishToMiddle from "@/components/squishToMiddle";
 import ImageGallery from "@/components/imageGallery";
 import TestimonialsCarousel from "@/components/testimonialsCarousel";
+import AwardsSection from "@/components/awardsSection";
 import HeroSlideshow from "@/components/heroSlideshow";
 
 const HERO_SLIDESHOW_IMAGES = [
@@ -82,6 +83,20 @@ export default function Home() {
               simulator designed to make{" "}
               <span className={styles.accent}>exercising fun</span>.
             </h2>
+          </div>
+          <div className={styles.statsGrid}>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>—</div>
+              <div className={styles.statLabel}>Stat label</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>—</div>
+              <div className={styles.statLabel}>Stat label</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>—</div>
+              <div className={styles.statLabel}>Stat label</div>
+            </div>
           </div>
         </SquishToMiddle>
       </section>
@@ -314,6 +329,14 @@ export default function Home() {
             <TestimonialsCarousel />
           </ContentBlock>
           </div>
+        </SquishToMiddle>
+      </section>
+
+      <section className={styles.homeSection}>
+        <SquishToMiddle>
+          <ContentBlock titleText="Awards & Recognition">
+            <AwardsSection />
+          </ContentBlock>
         </SquishToMiddle>
       </section>
 

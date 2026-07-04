@@ -1,0 +1,91 @@
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-grid);
+  margin-top: 0.5rem;
+}
+
+.awardCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--band-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.awardCardLink {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.awardCardLink:hover {
+  border-color: var(--blue-color);
+  box-shadow: 0 4px 16px rgba(51, 112, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.awardCardLink:focus-visible {
+  outline: 2px solid var(--blue-color);
+  outline-offset: 2px;
+}
+
+.awardLogo,
+.awardLogoPlaceholder {
+  position: relative;
+  width: min(200px, 100%);
+  aspect-ratio: 4 / 3;
+  flex: none;
+}
+
+.awardLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.awardLogoImg {
+  object-fit: contain;
+}
+
+.awardLogoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+}
+
+.awardLogoPlaceholderLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.awardName {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+  max-width: 18rem;
+}
+
+@media (max-width: 900px) {
+  .awardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-grid-tight);
+  }
+
+  .awardCard {
+    padding: 1.75rem 1.25rem;
+  }
+}
