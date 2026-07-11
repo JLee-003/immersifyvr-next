@@ -179,9 +179,101 @@
   }
 }
 
+/* How to Get Started */
+.getStartedRow {
+  list-style: none;
+  margin: var(--space-grid-tight) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.getStartedItem {
+  display: flex;
+  min-width: 0;
+  align-self: stretch;
+}
+
+.getStartedCard {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.getStartedArrowCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 112px;
+  flex-shrink: 0;
+}
+
+.getStartedArrow {
+  display: block;
+  width: 112px;
+  height: 56px;
+  color: var(--blue-color);
+  overflow: visible;
+}
+
+.inlineLink {
+  color: var(--blue-color);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inlineLink:hover {
+  color: var(--blue-hover-color);
+}
+
+@media (max-width: 900px) {
+  .getStartedRow {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .getStartedItem {
+    width: 100%;
+  }
+
+  .getStartedCard {
+    min-height: 0;
+  }
+
+  .getStartedArrowCell {
+    width: auto;
+    padding: 0.75rem 0;
+  }
+
+  .getStartedArrow {
+    width: 56px;
+    height: 112px;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .getStartedCard {
+    padding: 1rem 1.15rem;
+  }
+}
+
 /* Quote Section with Background Image */
 .quoteSection {
-  margin: 1.5rem 0 0;
+  margin: 0;
   width: 100%;
 }
 

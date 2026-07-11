@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import reveal from "@/styles/revealAnimation.module.css";
 import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 
+import { Fragment } from "react";
+import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ContentBlock from "@/components/contentBlock";
@@ -65,10 +67,72 @@ const PROCESS_STEPS = [
   },
 ];
 
+const GET_STARTED_STEPS = [
+  {
+    title: "Explore",
+    text: "Explore our website and find out about all the things you can experience with ImmersifyVR, from immersive VR activities to how our sessions work.",
+  },
+  {
+    title: "Book a Session",
+    text: (
+      <>
+        Simply click{" "}
+        <Link href="/quote" className={styles.inlineLink}>
+          Book a Session
+        </Link>{" "}
+        at the top right or at the bottom of this page.
+      </>
+    ),
+  },
+  {
+    title: "That's it!",
+    text: "The ImmersifyVR team will get back to you in 1–3 business days. When you get a response back, we'll find you a time to dive into ImmersifyVR with a personal trainer!",
+  },
+];
+
+function CurvedArrow({ className }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 96 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <marker
+          id="get-started-arrowhead"
+          markerWidth="16"
+          markerHeight="16"
+          refX="14"
+          refY="8"
+          orient="30"
+          markerUnits="userSpaceOnUse"
+        >
+          <path
+            d="M2 2 L14 8 L2 14"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </marker>
+      </defs>
+      <path
+        d="M8 26 C30 10, 64 10, 88 26"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        fill="none"
+        markerEnd="url(#get-started-arrowhead)"
+      />
+    </svg>
+  );
+}
+
 export default function Services() {
   const whatWeOffer = useRevealOnScroll();
   const process = useRevealOnScroll();
-  const quote = useRevealOnScroll();
 
   return (
     <div>
@@ -121,7 +185,7 @@ export default function Services() {
             </ContentBlock>
           </SquishToMiddle>
         </SectionBand>
-        <SectionBand extraBottom>
+        <SectionBand>
           <SquishToMiddle>
             <ContentBlock titleText="The Process">
               <div ref={process.sectionRef}>
@@ -157,19 +221,46 @@ export default function Services() {
             </ContentBlock>
           </SquishToMiddle>
         </SectionBand>
-        <div ref={quote.sectionRef} className={styles.quoteSection}>
+        <SectionBand alt>
+          <SquishToMiddle>
+            <ContentBlock titleText="How to Get Started">
+              <div>
+                <ol className={styles.getStartedRow}>
+                  {GET_STARTED_STEPS.map((step, index) => (
+                    <Fragment key={step.title}>
+                      <li className={styles.getStartedItem}>
+                        <div className={styles.getStartedCard}>
+                          <h2 className={styles.featureTitle}>
+                            {step.title}
+                          </h2>
+                          <p className={styles.featureDescription}>
+                            {step.text}
+                          </p>
+                        </div>
+                      </li>
+                      {index < GET_STARTED_STEPS.length - 1 ? (
+                        <li
+                          className={styles.getStartedArrowCell}
+                          aria-hidden="true"
+                        >
+                          <CurvedArrow className={styles.getStartedArrow} />
+                        </li>
+                      ) : null}
+                    </Fragment>
+                  ))}
+                </ol>
+              </div>
+            </ContentBlock>
+          </SquishToMiddle>
+        </SectionBand>
+        <div className={styles.quoteSection}>
           <div className={styles.quoteBackground}>
             <div className={styles.quoteOverlay}>
-              <div
-                className={`${styles.quoteContent} ${reveal.revealCard} ${quote.isVisible(0) ? reveal.revealVisible : ""}`}
-                data-reveal-index={0}
-              >
-                <h2 className={`${styles.quoteHeader} ${reveal.revealTitle}`}>
-                  Ready to start?
+              <div className={styles.quoteContent}>
+                <h2 className={styles.quoteHeader}>
+                  Ready to Get Started?
                 </h2>
-                <div className={reveal.revealBody}>
-                  <QuoteButton />
-                </div>
+                <QuoteButton />
               </div>
             </div>
           </div>
