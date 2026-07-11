@@ -12,6 +12,26 @@ import QuoteButton from "@/components/quoteButton";
 import SectionBand from "@/components/sectionBand";
 import ServicesVideoHero from "@/components/servicesVideoHero";
 
+const OFFER_ICONS = {
+  "Engaging Motivation": (
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+  ),
+  "Safe Exercise": (
+    <>
+      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+      <path d="m9 12 2 2 4-4" />
+    </>
+  ),
+  "Immersive Technology": (
+    <>
+      <path d="M5 9h14a3 3 0 0 1 3 3v3.5a3.5 3.5 0 0 1-3.5 3.5h-3.9L12 15l-2.6 4H5.5A3.5 3.5 0 0 1 2 15.5V12a3 3 0 0 1 3-3z" />
+      <path d="M7 9a5 5 0 0 1 10 0" />
+      <path d="M2 13h-1" />
+      <path d="M23 13h-1" />
+    </>
+  ),
+};
+
 const OFFERS = [
   {
     title: "Engaging Motivation",
@@ -72,7 +92,26 @@ export default function Services() {
                         <img src={offer.image} alt={offer.title} />
                       </div>
                       <div className={styles.offerText}>
-                        <h2 className={reveal.revealTitle}>{offer.title}</h2>
+                        <div className={styles.offerHeader}>
+                          <div
+                            className={`${styles.offerIcon} ${reveal.revealMedia}`}
+                            aria-hidden="true"
+                          >
+                            <svg
+                              width="32"
+                              height="32"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="var(--blue-color)"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              {OFFER_ICONS[offer.title]}
+                            </svg>
+                          </div>
+                          <h2 className={reveal.revealTitle}>{offer.title}</h2>
+                        </div>
                         <p className={reveal.revealBody}>{offer.text}</p>
                       </div>
                     </div>

@@ -38,8 +38,23 @@
   justify-content: center;
 }
 
-.offerText h2 {
-  margin: 0 0 0.75rem;
+.offerHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.offerIcon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.offerHeader h2 {
+  margin: 0;
   font-size: var(--subsection-title-size);
   font-weight: 600;
   color: var(--text-color);
