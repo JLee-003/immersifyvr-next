@@ -230,7 +230,7 @@ export default function Home() {
                 <div className={styles.experienceMedia}>
                   <ImageGallery
                     aspectRatio
-                    images={["/img/rock-climbing.png"]}
+                    images={["/img/climbing-1.avif", "/img/climbing-2.avif"]}
                     altText="Rock Climbing Experience"
                   />
                 </div>
