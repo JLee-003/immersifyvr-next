@@ -189,9 +189,10 @@ export default function Home() {
                 <div className={styles.experienceBody}>
                   <h2>Virtual Swimming</h2>
                   <p>
-                    Swim around in a virtual ocean environment and catch as many
-                    fish as you can! Users can expect a low-moderate intensity
-                    upper body workout.
+                    Swim through a vibrant virtual ocean and catch as many fish
+                    as you can! Explore deeper waters, discover hidden treasures,
+                    and even ride alongside whales. Users can expect a
+                    low-to-moderate intensity upper-body workout.
                   </p>
                 </div>
               </article>
@@ -212,8 +213,10 @@ export default function Home() {
                 <div className={styles.experienceBody}>
                   <h2>Spaceball</h2>
                   <p>
-                    Play a tennis-like game in a virtual space environment! Users
-                    can expect a moderate intensity upper body workout.
+                    Play a tennis-like game in a virtual space arena! Compete
+                    against alien opponents and try to beat three unique and
+                    increasingly challenging levels. Users can expect a
+                    moderate-intensity upper-body workout.
                   </p>
                 </div>
               </article>
@@ -234,9 +237,9 @@ export default function Home() {
                 <div className={styles.experienceBody}>
                   <h2>Rock Climbing</h2>
                   <p>
-                    Explore a new and exciting world, one rock at a time. A low
-                    intensity workout that allows users to climb at their own
-                    pace.
+                    Climb at your own pace, reach new heights, and enjoy scenic
+                    views along the way. This low-intensity activity is designed
+                    to provide a relaxed and accessible climbing experience.
                   </p>
                 </div>
               </article>
