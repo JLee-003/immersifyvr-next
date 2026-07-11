@@ -155,8 +155,8 @@ export default function Home() {
               </div>
               <div className={styles.statDivider} aria-hidden="true" />
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>7</div>
-                <div className={styles.statLabel}>Total visits</div>
+                <div className={styles.statNumber}>16+</div>
+                <div className={styles.statLabel}>Participants</div>
               </div>
             </div>
           </SquishToMiddle>
