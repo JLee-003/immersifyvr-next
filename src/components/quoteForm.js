@@ -32,7 +32,6 @@ export default function QuoteForm() {
 		last_name: "",
 		email: "",
 		location: "",
-		residents: "",
 	});
 	const [touched, setTouched] = useState({});
 	const [errors, setErrors] = useState({});
@@ -181,27 +180,8 @@ export default function QuoteForm() {
 							onChange={(e) => handleChange("location", e.target.value)}
 						/>
 					</div>
-					<div className={styles.inputGroup}>
-						<label className={styles.formLabel} htmlFor="residents">
-							Estimated Number of Residents
-						</label>
-						<select
-							className={`${styles.formInput}${values.residents === "" ? ` ${styles.selectPlaceholder}` : ""}`}
-							id="residents"
-							name="residents"
-							value={values.residents}
-							onChange={(e) => handleChange("residents", e.target.value)}
-						>
-							<option value="">Select range</option>
-							<option value="1-25">1-5 residents</option>
-							<option value="26-50">6-10 residents</option>
-							<option value="51-100">11-25 residents</option>
-							<option value="101-200">26-50 residents</option>
-							<option value="200+">50+ residents</option>
-						</select>
-					</div>
 					<button className={styles.submitForm} type="submit">
-						Get a Quote
+						Book a Session
 					</button>
 				</form>
 			)}

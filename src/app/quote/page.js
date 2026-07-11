@@ -104,7 +104,7 @@ export default function Quote() {
             </div>
           </div>
           <div className={styles.formSection}>
-            <h2>Request a Quote</h2>
+            <h2>Book a Session</h2>
             <QuoteForm />
           </div>
         </div>

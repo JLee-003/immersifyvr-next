@@ -45,8 +45,8 @@
   text-align: left;
 }
 
-.ourTeamIntro {
-  margin: 0 auto 1.25rem;
+.aboutIntro {
+  margin: 0 auto;
   max-width: 720px;
   font-weight: 400;
   font-size: 1rem;
@@ -68,9 +68,5 @@
 
   .contactLead {
     text-align: left;
-  }
-
-  .ourTeamIntro {
-    margin-bottom: 1rem;
   }
 }

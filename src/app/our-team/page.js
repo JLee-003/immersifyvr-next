@@ -50,6 +50,7 @@ const TEAM_PROFILES = [
 ];
 
 export default function OurTeam() {
+  const aboutSection = useRevealOnScroll();
   const teamSection = useRevealOnScroll();
   const contactSection = useRevealOnScroll();
 
@@ -57,21 +58,29 @@ export default function OurTeam() {
     <div>
       <Navbar />
       <div className={styles.contentBelowNav}>
-        <SectionBand extraBottom>
+        <SectionBand alt>
           <SquishToMiddle>
-            <ContentBlock titleText="Our Team">
-              <div ref={teamSection.sectionRef}>
+            <ContentBlock titleText="About Us">
+              <div ref={aboutSection.sectionRef}>
                 <div
-                  className={`${reveal.revealCard} ${teamSection.isVisible(0) ? reveal.revealVisible : ""}`}
+                  className={`${reveal.revealCard} ${aboutSection.isVisible(0) ? reveal.revealVisible : ""}`}
                   data-reveal-index={0}
                 >
-                  <p className={`${styles.ourTeamIntro} ${reveal.revealBody}`}>
+                  <p className={`${styles.aboutIntro} ${reveal.revealBody}`}>
                     Our project idea stems from our shared passion for virtual
                     reality, game development, and improving the lives of the
                     elderly. We are all people with grandparents who face the
                     same issues we work to solve with ImmersifyVR.
                   </p>
                 </div>
+              </div>
+            </ContentBlock>
+          </SquishToMiddle>
+        </SectionBand>
+        <SectionBand extraBottom>
+          <SquishToMiddle>
+            <ContentBlock titleText="Meet the Team">
+              <div ref={teamSection.sectionRef}>
                 <ProfileGallery profiles={TEAM_PROFILES} revealOnScroll />
               </div>
             </ContentBlock>

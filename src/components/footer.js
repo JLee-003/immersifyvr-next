@@ -38,7 +38,7 @@ export default function Footer() {
               </li>
               <li>
                 <a target="_blank" href="/quote">
-                  Get a Quote
+                  Book a Session
                 </a>
               </li>
             </ul>
