@@ -109,6 +109,16 @@
   object-position: center;
 }
 
+.galleryAspectRatio.galleryCompact {
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 768px) {
+  .galleryAspectRatio.galleryCompact {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 @media (max-width: 768px) {
   .arrow {
     width: 28px;

@@ -8,6 +8,7 @@ export default function ImageGallery({
   altText,
   className = "",
   aspectRatio = false,
+  compact = false,
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -25,7 +26,7 @@ export default function ImageGallery({
 
   return (
     <div
-      className={`${styles.gallery} ${aspectRatio ? styles.galleryAspectRatio : ""} ${className}`.trim()}
+      className={`${styles.gallery} ${aspectRatio ? styles.galleryAspectRatio : ""} ${compact ? styles.galleryCompact : ""} ${className}`.trim()}
     >
       <button 
         className={styles.arrow} 

@@ -255,10 +255,8 @@
 .experiencesList {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.75rem;
   margin-top: var(--space-grid-tight);
-  margin-inline: calc(-1 * var(--space-page-gutter));
-  width: calc(100% + 2 * var(--space-page-gutter));
 }
 
 @keyframes experienceMediaIn {
@@ -286,8 +284,36 @@
 .experienceCard {
   margin: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.experienceCard:nth-child(odd) .experienceMedia {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.experienceCard:nth-child(odd) .experienceBody {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.experienceCard:nth-child(even) .experienceMedia {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.experienceCard:nth-child(even) .experienceBody {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.experienceCard .experienceMedia,
+.experienceCard .experienceBody {
+  align-self: center;
 }
 
 .experienceCard .experienceMedia,
@@ -329,7 +355,7 @@
 }
 
 .experienceBody {
-  padding: 1rem var(--space-page-gutter) 0;
+  padding: 0;
   background: none;
 }
 
@@ -349,13 +375,29 @@
 
 @media (max-width: 768px) {
   .experiencesList {
-    gap: 2.5rem;
-    margin-inline: -1rem;
-    width: calc(100% + 2rem);
+    gap: 2.25rem;
   }
 
-  .experienceBody {
-    padding: 0.85rem 1rem 0;
+  .experienceCard,
+  .experienceCard:nth-child(odd),
+  .experienceCard:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .experienceCard:nth-child(odd) .experienceMedia,
+  .experienceCard:nth-child(even) .experienceMedia,
+  .experienceCard:nth-child(odd) .experienceBody,
+  .experienceCard:nth-child(even) .experienceBody {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: stretch;
+  }
+
+  .experienceMedia {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
   }
 
   .experienceBody h2 {
