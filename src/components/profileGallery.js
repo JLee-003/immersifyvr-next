@@ -37,6 +37,18 @@ export default function ProfileGallery({ profiles, revealOnScroll = false }) {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
               className={styles.profileImage}
+              style={
+                profile.objectPosition || profile.imageScale
+                  ? {
+                      ...(profile.objectPosition
+                        ? { objectPosition: profile.objectPosition }
+                        : {}),
+                      ...(profile.imageScale
+                        ? { transform: `scale(${profile.imageScale})` }
+                        : {}),
+                    }
+                  : undefined
+              }
               priority={index < 2}
             />
           </div>

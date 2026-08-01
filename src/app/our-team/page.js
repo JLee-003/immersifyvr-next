@@ -32,12 +32,13 @@ const TEAM_PROFILES = [
       "I'm a learning game developer and also enjoy music, golf, and running as a hobby. With the team, I work on various parts of the project, from the swimming algorithm to tutorials.",
   },
   {
-    src: "/img/lucas-headshot.avif",
-    alt: "Team Member 3",
-    name: "Lucas Wang",
+    src: "/img/abraham-headshot.avif",
+    alt: "Abraham Okohoba",
+    objectPosition: "center top",
+    name: "Abraham Okohoba",
     role: "Business Coach",
     introduction:
-      "I'm a product and user experience designer who loves playing games. I guide the business side of things and help plan our next moves.",
+      "I teach kids to code, guiding them from their very first line to real, competition-ready apps. My work blends hands-on Python and AI-assisted building with thoughtfully crafted curricula that meet each student where they are.",
   },
   {
     src: "/img/andy-headshot.avif",
