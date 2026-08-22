@@ -17,7 +17,7 @@ const VISITS = [
     date: "October 12, 2024",
     location: "Chateau Cupertino",
     notes:
-      "On October 12, 2024, our team visited Chateau Cupertino to share ImmersifyVR with residents and staff. This is placeholder copy for the session notes — who we met, which experiences we ran, and what we noticed that day. We'll replace it with a fuller write-up of the visit.",
+      "October 12, 2024, was our first visit to Chateau Cupertino to playtest, where we shared ImmersifyVR with residents and staff. At this time, we only had one prototype of an application: swimming. We were able to run the experience for five residents, and we received valuable feedback on the experience that guided our development of swimming.",
     images: [
       {
         src: "/img/2024-10-12 Chateau/chateau-12.avif",
@@ -61,8 +61,8 @@ export default function Outreach() {
                 >
                   <p className={`${styles.aboutIntro} ${reveal.revealBody}`}>
                     We visit retirement communities to introduce ImmersifyVR in
-                    person — running sessions, listening to residents, and
-                    learning how the experiences feel in real spaces. This page
+                    person. In these workshops we run sessions, listen to residents, 
+                    and learn how the experiences feel in real spaces. This page
                     collects notes and photos from each visit.
                   </p>
                 </div>
