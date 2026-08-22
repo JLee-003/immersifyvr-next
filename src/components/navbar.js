@@ -67,6 +67,18 @@ export default function Header() {
 				</li>
 				<li>
 					<Link
+						href="/outreach"
+						className={
+							pathname?.startsWith("/outreach")
+								? styles.active
+								: ""
+						}
+					>
+						Outreach
+					</Link>
+				</li>
+				<li>
+					<Link
 						href="/our-team"
 						className={
 							pathname?.startsWith("/our-team")

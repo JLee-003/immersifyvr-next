@@ -16,7 +16,7 @@ import SectionBand from "@/components/sectionBand";
 
 const TEAM_PROFILES = [
   {
-    src: "/img/jonny-headshot.avif",
+    src: "/img/headshots/jonny-headshot.avif",
     alt: "Team Member 1",
     name: "Jonny Tang",
     role: "Team Member",
@@ -24,7 +24,7 @@ const TEAM_PROFILES = [
       "I love programming, music, art, and helping others. I worked on both the VR and website development and design, such as the spaceball design and the website layout.",
   },
   {
-    src: "/img/jaeho-headshot.avif",
+    src: "/img/headshots/jaeho-headshot.avif",
     alt: "Team Member 2",
     name: "Jaeho Lee",
     role: "Team Member",
@@ -32,7 +32,7 @@ const TEAM_PROFILES = [
       "I'm a learning game developer and also enjoy music, golf, and running as a hobby. With the team, I work on various parts of the project, from the swimming algorithm to tutorials.",
   },
   {
-    src: "/img/abraham-headshot.avif",
+    src: "/img/headshots/abraham-headshot.avif",
     alt: "Abraham Okohoba",
     objectPosition: "center top",
     name: "Abraham Okohoba",
@@ -41,7 +41,7 @@ const TEAM_PROFILES = [
       "I teach kids to code, guiding them from their very first line to real, competition-ready apps. My work blends hands-on Python and AI-assisted building with thoughtfully crafted curricula that meet each student where they are.",
   },
   {
-    src: "/img/andy-headshot.avif",
+    src: "/img/headshots/andy-headshot.avif",
     alt: "Team Member 4",
     name: "Andy Liu",
     role: "Technical Coach",

@@ -37,17 +37,17 @@ const OFFER_ICONS = {
 const OFFERS = [
   {
     title: "Engaging Motivation",
-    image: "/img/chateau-3.avif",
+    image: "/img/2024-10-12 Chateau/chateau-3.avif",
     text: "We provide motivation to exercise through entertaining VR activities like swimming to catch fish. Instead of providing generalized and basic exercise, our application combines physical activity into an engaging environment.",
   },
   {
     title: "Safe Exercise",
-    image: "/img/chateau-4.avif",
+    image: "/img/2025-02-15 Chateau/chateau-4.avif",
     text: "We utilize virtual reality to provide a stress and danger-free environment for the elderly and disabled to overcome daily limitations. Virtual reality allows anyone to immerse themselves in a realistic experience in any safe space they choose.",
   },
   {
     title: "Immersive Technology",
-    image: "/img/chateau-5.avif",
+    image: "/img/2025-04-05 Chateau/chateau-5.avif",
     text: "We use Unity's XR Interaction Toolkit to create an experience with visually pleasing aesthetics and intuitive controls, making our experience feel as simple and effective as possible. We are constantly creating new activities based on user feedback.",
   },
 ];

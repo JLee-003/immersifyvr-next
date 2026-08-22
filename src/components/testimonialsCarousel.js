@@ -8,44 +8,30 @@ const TESTIMONIALS = [
   {
     name: "Ms. Gloria",
     role: "Senior Tester",
-    image: "/img/gloria.avif",
+    image: "/img/testimonials/gloria.avif",
     quote:
-      "[It] would help us to go see things that are not possible anymore since we can't travel, we are limited in mobility … We wanna go see, and we can actually use these and actually place yourself there, and be on the boat. And see things that you wouldn't otherwise.",
+      "It would help us to go see things that are not possible anymore since we can't travel, we are limited in mobility. We wanna go see, and we can actually use these and actually place yourself there, and be on the boat. And see things that you wouldn't otherwise.",
   },
   {
     name: "Ed Loeswick",
     role: "Personal Trainer",
-    image: "/img/ed1.avif",
+    image: "/img/testimonials/ed1.avif",
     quote:
-      "You got something [older adults] really want… Conceptually, it's a great idea. And in terms of people liking to use it? Off the charts.",
+      "You got something those older adults really want. Conceptually, it's a great idea. And in terms of people liking to use it? Off the charts.",
   },
   {
     name: "Bob (Chateau Cupertino)",
     role: "Senior Tester",
-    image: "/img/bob.avif",
+    image: "/img/testimonials/bob.avif",
     quote:
       "In the afternoon I get really lonely and bored, because just the tablet is not enough. I think this virtual reality thing would make it more fun. (paraphrased)",
   },
   {
-    name: "Margaret L.",
-    role: "Activity Director",
-    initials: "ML",
+    name: "Jack (Coastside Seniors)",
+    role: "Senior Tester",
+    image: "/img/testimonials/jack.avif",
     quote:
-      "Placeholder testimonial — residents light up when they put the headset on. It gives our activity calendar something fresh that people actually ask for again.",
-  },
-  {
-    name: "James R.",
-    role: "Senior Resident",
-    initials: "JR",
-    quote:
-      "Placeholder testimonial — I didn't think I'd enjoy exercise at my age, but swimming in VR feels playful instead of like a chore.",
-  },
-  {
-    name: "Sarah K.",
-    role: "Family Member",
-    initials: "SK",
-    quote:
-      "Placeholder testimonial — my mom talks about her VR sessions all week. It's reassuring to see her moving more and smiling while she does it.",
+      "When you get a job, you become serious. When you become a grandparent, you get even more serious. But once you retire, like I'm retired now, you learn to be a kid again. You learn to play again.",
   },
 ];
 

@@ -32,6 +32,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a target="_blank" href="/outreach">
+                  Outreach
+                </a>
+              </li>
+              <li>
                 <a target="_blank" href="/our-team">
                   About Us
                 </a>
