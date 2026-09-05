@@ -19,13 +19,13 @@ import RainingDotsBackground from "@/components/rainingDotsBackground";
 const HERO_SLIDESHOW_IMAGES = [
   "/img/2024-10-12 Chateau/chateau-1.avif",
   "/img/2024-10-12 Chateau/chateau-2.avif",
-  "/img/2025-04-05 Chateau/chateau-5.avif",
-  "/img/2024-10-12 Chateau/chateau-6.avif",
-  "/img/2025-02-15 Chateau/chateau-7.avif",
-  "/img/2025-04-05 Chateau/chateau-8.avif",
-  { src: "/img/2025-07-26 Chateau/chateau-9.avif", objectPosition: "center 38%" },
-  "/img/2026-05-23 Chateau/chateau-10.avif",
-  { src: "/img/2025-02-15 Chateau/chateau-11.avif", objectPosition: "center 28%" },
+  "/img/2025-04-05 Chateau/chateau-1.avif",
+  "/img/2024-10-12 Chateau/chateau-4.avif",
+  "/img/2025-02-15 Chateau/chateau-2.avif",
+  "/img/2025-04-05 Chateau/chateau-2.avif",
+  { src: "/img/2025-07-26 Chateau/chateau-1.avif", objectPosition: "center 38%" },
+  "/img/2026-05-23 Chateau/chateau-1.avif",
+  { src: "/img/2025-07-26 Chateau/chateau-2.avif", objectPosition: "center 28%" },
   "/img/testimonials/ed2.avif",
 ];
 
@@ -353,7 +353,7 @@ export default function Home() {
             >
               <div className={styles.featureCardImage}>
                 <Image
-                  src="/img/2026-05-23 Chateau/chateau-10.avif"
+                  src="/img/2026-05-23 Chateau/chateau-1.avif"
                   alt="Lowering Barriers"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -397,7 +397,7 @@ export default function Home() {
             >
               <div className={styles.featureCardImage}>
                 <Image
-                  src="/img/2025-02-15 Chateau/chateau-11.avif"
+                  src="/img/2025-07-26 Chateau/chateau-2.avif"
                   alt="Staying Active"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

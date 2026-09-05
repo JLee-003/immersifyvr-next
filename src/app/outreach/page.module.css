@@ -13,12 +13,6 @@
   text-align: left;
 }
 
-.visitsList {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
 .visitCard {
   display: flex;
   flex-direction: column;
@@ -50,10 +44,4 @@
   line-height: 1.6;
   color: var(--text-color);
   text-align: left;
-}
-
-@media (max-width: 768px) {
-  .visitsList {
-    gap: 1rem;
-  }
 }

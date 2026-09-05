@@ -13,6 +13,113 @@ import MosaicGallery from "@/components/mosaicGallery";
 
 const VISITS = [
   {
+    id: "chateau-cupertino-2025-07-26",
+    date: "July 26, 2025",
+    location: "Chateau Cupertino",
+    notes:
+      "On July 26, 2025, only one resident, Bob Stetson, participated in our workshop, and he was the first resident to participate in our personal trainer program following the visit. After this visit, we had only minor changes left to swimming, so we started looking to creating a new experience.",
+    images: [
+      {
+        src: "/img/2025-07-26 Chateau/chateau-1.avif",
+        alt: "A moment from our July visit to Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-07-26 Chateau/chateau-2.avif",
+        alt: "Residents and staff during the July Chateau Cupertino visit",
+      },
+      {
+        src: "/img/2025-07-26 Chateau/chateau-3.avif",
+        alt: "The ImmersifyVR team at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-07-26 Chateau/chateau-4.avif",
+        alt: "A resident using ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-07-26 Chateau/chateau-5.avif",
+        alt: "Playtesting ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-07-26 Chateau/chateau-6.avif",
+        alt: "A group moment from the July Chateau Cupertino visit",
+      },
+      {
+        src: "/img/2025-07-26 Chateau/chateau-7.avif",
+        alt: "Photos from the July 26 Chateau Cupertino outreach visit",
+      },
+    ],
+  },
+  {
+    id: "chateau-cupertino-2025-04-05",
+    date: "April 5, 2025",
+    location: "Chateau Cupertino",
+    notes:
+      "April 5, 2025, marked our third visit to Chateau Cupertino to playtest. We restructured the tutorial to be more effective yet also shorter, and we once again reworked the swimming mechanics. Three residents participated in this workshop. By this workshop, we had a decently polished swimming environment, as we added colorful fish to catch and coral as well as other details to the ocean floor.",
+    images: [
+      {
+        src: "/img/2025-04-05 Chateau/chateau-1.avif",
+        alt: "A moment from our April visit to Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-04-05 Chateau/chateau-2.avif",
+        alt: "Residents and staff during the April Chateau Cupertino visit",
+      },
+      {
+        src: "/img/2025-04-05 Chateau/chateau-3.avif",
+        alt: "The ImmersifyVR team at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-04-05 Chateau/chateau-4.avif",
+        alt: "A resident using ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-04-05 Chateau/chateau-5.avif",
+        alt: "Photos from the April 5 Chateau Cupertino outreach visit",
+      },
+    ],
+  },
+  {
+    id: "chateau-cupertino-2025-02-15",
+    date: "February 15, 2025",
+    location: "Chateau Cupertino",
+    notes:
+      "February 15, 2025, was our second visit to Chateau Cupertino to playtest. By then, we implemented a crude tutorial and reworked our swimming mechanics. We ran the experience for three residents, and the feedback we received guided us in improving the experience for all users.",
+    images: [
+      {
+        src: "/img/2025-02-15 Chateau/chateau-1.avif",
+        alt: "A moment from our February visit to Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-2.avif",
+        alt: "Residents and staff during the February Chateau Cupertino visit",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-3.avif",
+        alt: "The ImmersifyVR team at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-4.avif",
+        alt: "A resident using ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-5.avif",
+        alt: "Playtesting ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-6.avif",
+        alt: "A group moment from the February Chateau Cupertino visit",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-7.avif",
+        alt: "Residents trying VR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2025-02-15 Chateau/chateau-8.avif",
+        alt: "Photos from the February 15 Chateau Cupertino outreach visit",
+      },
+    ],
+  },
+  {
     id: "chateau-cupertino-2024-10-12",
     date: "October 12, 2024",
     location: "Chateau Cupertino",
@@ -20,7 +127,7 @@ const VISITS = [
       "October 12, 2024, was our first visit to Chateau Cupertino to playtest, where we shared ImmersifyVR with residents and staff. At this time, we only had one prototype of an application: swimming. We were able to run the experience for five residents, and we received valuable feedback on the experience that guided our development of swimming.",
     images: [
       {
-        src: "/img/2024-10-12 Chateau/chateau-12.avif",
+        src: "/img/2024-10-12 Chateau/chateau-5.avif",
         alt: "A moment from our visit to Chateau Cupertino",
       },
       {
@@ -36,7 +143,7 @@ const VISITS = [
         alt: "A resident using a VR headset at Chateau Cupertino",
       },
       {
-        src: "/img/2024-10-12 Chateau/chateau-6.avif",
+        src: "/img/2024-10-12 Chateau/chateau-4.avif",
         alt: "Group photo from the Chateau Cupertino outreach visit",
       },
     ],
@@ -70,11 +177,15 @@ export default function Outreach() {
             </ContentBlock>
           </SquishToMiddle>
         </SectionBand>
-        <SectionBand extraBottom>
-          <SquishToMiddle>
-            <div ref={visitsSection.sectionRef} className={styles.visitsList}>
-              {VISITS.map((visit, index) => (
-                <ContentBlock key={visit.id} titleText={visit.location}>
+        <div ref={visitsSection.sectionRef}>
+          {VISITS.map((visit, index) => (
+            <SectionBand
+              key={visit.id}
+              alt={index % 2 === 1}
+              extraBottom={index === VISITS.length - 1}
+            >
+              <SquishToMiddle>
+                <ContentBlock titleText={visit.location}>
                   <article
                     className={`${styles.visitCard} ${reveal.revealCard} ${visitsSection.isVisible(index) ? reveal.revealVisible : ""}`}
                     data-reveal-index={index}
@@ -90,10 +201,10 @@ export default function Outreach() {
                     </div>
                   </article>
                 </ContentBlock>
-              ))}
-            </div>
-          </SquishToMiddle>
-        </SectionBand>
+              </SquishToMiddle>
+            </SectionBand>
+          ))}
+        </div>
       </div>
       <Footer />
     </div>
