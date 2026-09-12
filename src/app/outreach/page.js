@@ -13,6 +13,113 @@ import MosaicGallery from "@/components/mosaicGallery";
 
 const VISITS = [
   {
+    id: "coastside-seniors-2026-08-08",
+    date: "August 8, 2026",
+    location: "Coastside Seniors",
+    notes:
+      "On August 8, 2026, we visited Coastside Senior Center in Half Moon. With Ed, we ran a workshop for three interested residents. We ran spaceball and swimming, as well as our newest prototype: rock climbing. From this visit, we've compiled a list of action items and big changes to do, such as reworking the spaceball enemy AI. We are also keeping in touch with this senior center along with Mr. Ed to host more workshops in the future.",
+    images: [
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-1.avif",
+        alt: "A moment from our visit to Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-2.avif",
+        alt: "Residents and staff during the Coastside Seniors visit",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-3.avif",
+        alt: "The ImmersifyVR team at Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-4.avif",
+        alt: "A resident using ImmersifyVR at Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-5.avif",
+        alt: "Playtesting ImmersifyVR at Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-6.avif",
+        alt: "A group moment from the Coastside Seniors visit",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-7.avif",
+        alt: "Residents trying VR at Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-8.avif",
+        alt: "The ImmersifyVR workshop at Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-9.avif",
+        alt: "Outreach photos from Coastside Seniors",
+      },
+      {
+        src: "/img/2026-08-08 Coastside Seniors/hmb-10.avif",
+        alt: "Photos from the August 8 Coastside Seniors outreach visit",
+      },
+    ],
+  },
+  {
+    id: "chateau-cupertino-2026-05-23",
+    date: "May 23, 2026",
+    location: "Chateau Cupertino",
+    notes:
+      "We had our fifth workshop at Chateau Cupertino on May 23, 2026. Along with four new residents, Bob had returned after multiple one-to-one sessions with Ed in between. All of the seniors experienced either spaceball or swimming.",
+    images: [
+      {
+        src: "/img/2026-05-23 Chateau/chateau-1.avif",
+        alt: "A moment from our May visit to Chateau Cupertino",
+      },
+      {
+        src: "/img/2026-05-23 Chateau/chateau-2.avif",
+        alt: "Residents and staff during the May Chateau Cupertino visit",
+      },
+      {
+        src: "/img/2026-05-23 Chateau/chateau-3.avif",
+        alt: "The ImmersifyVR team at Chateau Cupertino",
+      },
+      {
+        src: "/img/2026-05-23 Chateau/chateau-4.avif",
+        alt: "A resident using ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2026-05-23 Chateau/chateau-5.avif",
+        alt: "Playtesting ImmersifyVR at Chateau Cupertino",
+      },
+      {
+        src: "/img/2026-05-23 Chateau/chateau-6.avif",
+        alt: "Photos from the May 23 Chateau Cupertino outreach visit",
+      },
+    ],
+  },
+  {
+    id: "ed-2025-08-19",
+    date: "August 19, 2025",
+    location: "Ed",
+    notes:
+      "On August 19, 2025, we met with Ed Loeswick, a VR expert and our first personal trainer, to discuss our project and have him playtest it before his visits to Bob Stetson.",
+    images: [
+      {
+        src: "/img/2025-08-19 Ed/ed-1.avif",
+        alt: "A moment from our August visit with Ed",
+      },
+      {
+        src: "/img/2025-08-19 Ed/ed-2.avif",
+        alt: "The ImmersifyVR team during the visit with Ed",
+      },
+      {
+        src: "/img/2025-08-19 Ed/ed-3.avif",
+        alt: "Trying ImmersifyVR during the visit with Ed",
+      },
+      {
+        src: "/img/2025-08-19 Ed/ed-4.avif",
+        alt: "Photos from the August 19 visit with Ed",
+      },
+    ],
+  },
+  {
     id: "chateau-cupertino-2025-07-26",
     date: "July 26, 2025",
     location: "Chateau Cupertino",
