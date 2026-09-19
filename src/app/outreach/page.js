@@ -95,9 +95,34 @@ const VISITS = [
     ],
   },
   {
+    id: "cupertino-senior-center-2025-11-17",
+    date: "November 17, 2025",
+    location: "Cupertino Senior Center",
+    notes:
+      "On November 17, 2025, we hosted a virtual reality event at Cupertino Senior Center, a community center where senior residents can participate in a variety of activities and events, such as yoga, which ran concurrently with our workshop. During our workshop, four residents attended and tried our virtual reality experiences.",
+    images: [
+      {
+        src: "/img/2025-11-17 Cupertino Senior Center/css-1.avif",
+        alt: "A moment from our visit to Cupertino Senior Center",
+      },
+      {
+        src: "/img/2025-11-17 Cupertino Senior Center/css-2.avif",
+        alt: "Residents trying ImmersifyVR at Cupertino Senior Center",
+      },
+      {
+        src: "/img/2025-11-17 Cupertino Senior Center/css-3.avif",
+        alt: "The ImmersifyVR team at Cupertino Senior Center",
+      },
+      {
+        src: "/img/2025-11-17 Cupertino Senior Center/css-4.avif",
+        alt: "Photos from the November 17 Cupertino Senior Center outreach visit",
+      },
+    ],
+  },
+  {
     id: "ed-2025-08-19",
     date: "August 19, 2025",
-    location: "Ed",
+    location: "Meeting with Ed Loeswick",
     notes:
       "On August 19, 2025, we met with Ed Loeswick, a VR expert and our first personal trainer, to discuss our project and have him playtest it before his visits to Bob Stetson.",
     images: [
@@ -257,6 +282,28 @@ const VISITS = [
   },
 ];
 
+function withLocationTitles(visits) {
+  const counts = visits.reduce((acc, visit) => {
+    acc[visit.location] = (acc[visit.location] || 0) + 1;
+    return acc;
+  }, {});
+
+  const seen = {};
+  const numberedOldestFirst = [...visits].reverse().map((visit) => {
+    const count = counts[visit.location];
+    let title = visit.location;
+    if (count > 1) {
+      seen[visit.location] = (seen[visit.location] || 0) + 1;
+      title = `${visit.location} ${seen[visit.location]}`;
+    }
+    return { ...visit, title };
+  });
+
+  return numberedOldestFirst.reverse();
+}
+
+const DISPLAY_VISITS = withLocationTitles(VISITS);
+
 export default function Outreach() {
   const introSection = useRevealOnScroll();
   const visitsSection = useRevealOnScroll();
@@ -285,14 +332,14 @@ export default function Outreach() {
           </SquishToMiddle>
         </SectionBand>
         <div ref={visitsSection.sectionRef}>
-          {VISITS.map((visit, index) => (
+          {DISPLAY_VISITS.map((visit, index) => (
             <SectionBand
               key={visit.id}
               alt={index % 2 === 1}
-              extraBottom={index === VISITS.length - 1}
+              extraBottom={index === DISPLAY_VISITS.length - 1}
             >
               <SquishToMiddle>
-                <ContentBlock titleText={visit.location}>
+                <ContentBlock titleText={visit.title}>
                   <article
                     className={`${styles.visitCard} ${reveal.revealCard} ${visitsSection.isVisible(index) ? reveal.revealVisible : ""}`}
                     data-reveal-index={index}
