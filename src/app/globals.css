@@ -15,11 +15,11 @@
 
   --site-max-width: 1200px;
 
-  /* Border radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-pill: 999px;
+  /* Border radius — square corners style test */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-pill: 0;
 
   /* Typography */
   --section-title-size: 1.8rem;
@@ -32,8 +32,11 @@
   --panel-padding: 2rem 2.5rem;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  border-radius: 0 !important;
 }
 
 body {

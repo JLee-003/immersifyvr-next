@@ -28,7 +28,7 @@ class ErrorBoundary extends Component {
           padding: '20px', 
           textAlign: 'center', 
           border: '1px solid #ff6b6b',
-          borderRadius: '8px',
+          borderRadius: '0',
           margin: '20px',
           backgroundColor: '#ffe0e0'
         }}>
@@ -41,7 +41,7 @@ class ErrorBoundary extends Component {
               backgroundColor: '#007bff',
               color: 'white',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '0',
               cursor: 'pointer'
             }}
           >
