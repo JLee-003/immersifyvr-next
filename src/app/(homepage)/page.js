@@ -154,7 +154,7 @@ export default function Home() {
               </div>
               <div className={styles.statDivider} aria-hidden="true" />
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>9</div>
+                <div className={styles.statNumber}>9+</div>
                 <div className={styles.statLabel}>Outreach visits</div>
               </div>
               <div className={styles.statDivider} aria-hidden="true" />
