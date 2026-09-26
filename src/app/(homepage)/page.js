@@ -145,18 +145,22 @@ export default function Home() {
             </div>
             <div className={styles.statsStrip}>
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>650+</div>
-                <div className={styles.statLabel}>Hours dedicated</div>
+                <div className={styles.statNumber}>800+</div>
+                <div className={styles.statLabel}>
+                  Hours dedicated
+                  <br />
+                  to the cause
+                </div>
               </div>
               <div className={styles.statDivider} aria-hidden="true" />
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>3</div>
-                <div className={styles.statLabel}>Locations visited</div>
+                <div className={styles.statNumber}>9</div>
+                <div className={styles.statLabel}>Outreach visits</div>
               </div>
               <div className={styles.statDivider} aria-hidden="true" />
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>16+</div>
-                <div className={styles.statLabel}>Participants</div>
+                <div className={styles.statNumber}>20+</div>
+                <div className={styles.statLabel}>Satisfied customers</div>
               </div>
             </div>
           </SquishToMiddle>
