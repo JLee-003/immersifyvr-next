@@ -182,10 +182,12 @@ export default function Home() {
                   <ImageGallery
                     aspectRatio
                     images={[
-                      "/img/beach-view.png",
-                      "/img/swimming-1.avif",
-                      "/img/swimming-2.avif",
-                      "/img/swimming-3.avif",
+                      "/img/experiences/virtual-swimming/beach-view.png",
+                      "/img/experiences/virtual-swimming/swimming-1.avif",
+                      "/img/experiences/virtual-swimming/swimming-2.avif",
+                      "/img/experiences/virtual-swimming/swimming-3.avif",
+                      "/img/experiences/virtual-swimming/swimming-4.avif",
+                      "/img/experiences/virtual-swimming/swimming-5.avif",
                     ]}
                     altText="Virtual Swimming Experience"
                   />
@@ -210,7 +212,11 @@ export default function Home() {
                 <div className={styles.experienceMedia}>
                   <ImageGallery
                     aspectRatio
-                    images={["/img/spaceball-1.avif", "/img/spaceball-2.avif"]}
+                    images={[
+                      "/img/experiences/spaceball/spaceball-1.avif",
+                      "/img/experiences/spaceball/spaceball-2.avif",
+                      "/img/experiences/spaceball/spaceball-3.avif",
+                    ]}
                     altText="Spaceball Experience"
                   />
                 </div>
@@ -234,7 +240,12 @@ export default function Home() {
                 <div className={styles.experienceMedia}>
                   <ImageGallery
                     aspectRatio
-                    images={["/img/climbing-1.avif", "/img/climbing-2.avif"]}
+                    images={[
+                      "/img/experiences/rock-climbing/climbing-1.avif",
+                      "/img/experiences/rock-climbing/climbing-2.avif",
+                      "/img/experiences/rock-climbing/climbing-3.avif",
+                      "/img/experiences/rock-climbing/climbing-4.avif",
+                    ]}
                     altText="Rock Climbing Experience"
                   />
                 </div>
@@ -269,7 +280,7 @@ export default function Home() {
             >
               <div className={styles.featureCardImage}>
                 <Image
-                  src="/img/swimming-1.avif"
+                  src="/img/experiences/virtual-swimming/swimming-1.avif"
                   alt="Engaging Storylines"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
